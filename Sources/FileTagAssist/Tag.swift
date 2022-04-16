@@ -23,7 +23,7 @@ struct Tag: Hashable, Identifiable, Codable {
 
 extension Array where Element == Tag {
     func sort() -> [Tag] {
-      return sort { $0.id < $1.id }
+      return sorted { $0.id < $1.id }
     }
 
     func tagNames() -> [String] {
