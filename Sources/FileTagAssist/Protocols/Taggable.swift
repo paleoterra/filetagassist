@@ -1,6 +1,7 @@
 import Foundation
 
 public protocol Taggable {
-    func tags() throws -> [String]
+    func tagNames() throws -> [String]
+    func tags() throws -> [Tag]
     func update(tags: [String]) throws
 }

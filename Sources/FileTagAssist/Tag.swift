@@ -7,6 +7,10 @@ public struct Tag: Hashable, Identifiable, Codable {
     ///
     /// Provides a simple method to group tags, such as "Business", or "descriptive"
     public var category: String?
+    /// Secondary classification of the tag
+    ///
+    /// Provides a finer classification
+    public var secondaryCategory: String?
     /// Date of first use
     ///
     /// Suggests that the tag should not be used for content prior to firstUse
