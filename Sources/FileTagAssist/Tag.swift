@@ -23,6 +23,21 @@ public struct Tag: Hashable, Identifiable, Codable {
     ///
     /// Provides a list of possible tags to associate with the current tags
     public var associatedTags: [[String]]?
+
+    init(id: String,
+         category: String? = nil,
+         secondaryCategory: String? = nil,
+         firstUse: Date? = nil,
+         lastUse: Date? = nil,
+         associatedTags: [[String]]? = nil
+    ) {
+        self.id = id
+        self.category = category
+        self.secondaryCategory = secondaryCategory
+        self.firstUse = firstUse
+        self.lastUse = lastUse
+        self.associatedTags = associatedTags
+    }
 }
 
 extension Array where Element == Tag {
