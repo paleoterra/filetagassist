@@ -6,11 +6,7 @@ public struct Tag: Hashable, Identifiable, Codable {
     /// Simple grouping of tags
     ///
     /// Provides a simple method to group tags, such as "Business", or "descriptive"
-    public var category: String?
-    /// Secondary classification of the tag
-    ///
-    /// Provides a finer classification
-    public var secondaryCategory: String?
+    public var categories: [String]
     /// Date of first use
     ///
     /// Suggests that the tag should not be used for content prior to firstUse
@@ -22,18 +18,16 @@ public struct Tag: Hashable, Identifiable, Codable {
     /// Tags commonly associated with the current tag
     ///
     /// Provides a list of possible tags to associate with the current tags
-    public var associatedTags: [[String]]?
+    public var associatedTags: [[String]]
 
     public init(id: String,
-         category: String? = nil,
-         secondaryCategory: String? = nil,
+         categories: [String] = [],
          firstUse: Date? = nil,
          lastUse: Date? = nil,
-         associatedTags: [[String]]? = nil
+         associatedTags: [[String]] = []
     ) {
         self.id = id
-        self.category = category
-        self.secondaryCategory = secondaryCategory
+        self.categories = categories
         self.firstUse = firstUse
         self.lastUse = lastUse
         self.associatedTags = associatedTags

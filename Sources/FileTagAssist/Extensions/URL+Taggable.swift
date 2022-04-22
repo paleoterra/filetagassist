@@ -8,7 +8,7 @@ extension URL: Taggable {
 
     public func tags() throws -> [Tag] {
         let values = try self.resourceValues(forKeys: [URLResourceKey.tagNamesKey])
-        if let strings = values as? [String] {
+        if let strings = values.tagNames {
             return strings.map { name in
                 Tag(id: name)
             }
